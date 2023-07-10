@@ -1,5 +1,6 @@
 # 라이브러리 선언
 from urllib import request
+import time
 
 # 프로그램에 실행에 필요한 변수 선언 (사용자 설정 값)
 start_day = 1 # 시험생성 시작 일
@@ -16,3 +17,4 @@ for day in range(start_day,end_day):
     with urllib.request.urlopen(url) as url_data:
         with open(f"./Day{day}_test.pdf", "wb") as pdf:
             pdf.write(url_data.read())
+            time.sleep(0.5)
